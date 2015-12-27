@@ -1,0 +1,330 @@
+<!doctype html>
+<!--[if IE 6 ]>
+<html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>DesignsSquare.com Maps Widget</title>
+    <meta name="generator" content="Documenter v1.6 http://rxa.li/documenter">
+    <meta name="date" content="2012-03-27T00:00:00+02:00">
+    <link rel="stylesheet" href="css/documenter_style.css" media="all">
+    <script src="js/jquery.1.6.4.js"></script>
+    <script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script src="js/jquery.easing.js"></script>
+    <link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+    <script src="js/shCore.js"></script>
+    <script src="js/shBrushCss.js"></script>
+    <script src="js/shBrushJScript.js"></script>
+    <script>SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();</script>
+    <script>document.createElement('section');
+    var duration = 500, easing = 'swing';</script>
+    <script src="js/script.js"></script>
+    <style>
+        html {
+            background-color: #FFFFFF;
+            color: #383838;
+        }
+
+        ::-moz-selection {
+            background: #444444;
+            color: #DDDDDD;
+        }
+
+        ::selection {
+            background: #444444;
+            color: #DDDDDD;
+        }
+
+        hr {
+            border-top: 1px solid #E1B568;
+            border-bottom: 1px solid #FFFFFF;
+        }
+
+        #documenter_sidebar, #documenter_sidebar ol a {
+            background-color: #ffffff;
+            /*background-color: #E1B568;*/
+            /*color: #222222;*/
+            color: #373737;
+        }
+
+        #documenter_sidebar ol a {
+            -webkit-text-shadow: 1px 1px 0px #EEEEEE;
+            -moz-text-shadow: 1px 1px 0px #EEEEEE;
+            text-shadow: 1px 1px 0px #EEEEEE;
+        }
+
+        #documenter_sidebar ol {
+            border-top: 1px solid #E1A53C;
+        }
+
+        #documenter_sidebar ol a {
+            border-top: 1px solid #EEEEEE;
+            border-bottom: 1px solid #E1B568;
+            color: #444444;
+        }
+
+        #documenter_sidebar ol a:hover {
+            background: #cc9833;
+            color: #ffffff;
+            border-top: 1px solid #E1A53C;
+        }
+
+        #documenter_sidebar ol a.current {
+            background: #cc9833;
+            color: #ffffff;
+            border-top: 1px solid #E1A53C;
+        }
+
+        #documenter_copyright {
+            display: block !important;
+            visibility: visible !important;
+        }
+
+        #logo #textual span {
+            font-size: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #cc9833;
+            font-style: normal;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        #logo #textual {
+            font-size: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #373737;
+            font-style: normal;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 40px;
+            margin-left: 10px;
+            /*margin-bottom: 12px;*/
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+<body>
+<div id="documenter_sidebar">
+    <!--<a href="http://www.wowthemes.net" id="documenter_logo"></a>-->
+    <div id="logo" class="group">
+        <a id="textual" href="http://designssquare.com" target="_blank" title="Design Square">
+            Designs <span class="title-highlight">Square</span>
+        </a>
+        <!--<p id='tagline'>Inspiration Designs. Practical Widgets</p>-->
+    </div>
+    <ol id="documenter_nav">
+        <li><a class="current" href="#documenter_cover">Start</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#how_to">How To</a></li>
+        <li><a href="#other">Other</a></li>
+        <li><a href="#artifacts">Artifacts</a></li>
+        <li><a href="#drupal_depenencies">Drupal Dependencies</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#releases">Release History</a></li>
+        <li><a href="#backlog">Future Releases</a></li>
+    </ol>
+    <div id="documenter_copyright">Copyright DesignsSquare.com 2014
+    </div>
+</div>
+<div id="documenter_content">
+<section id="documenter_cover">
+    <h1>DesignsSquare.com Sider Widget Documentation</h1>
+
+    <h2>Maps Functionality For Drupal</h2>
+    <hr>
+    <ul>
+        <li>Last Updated: Aug 15, 2014</li>
+        <li>Developed By: DesignsSquare.com</li>
+        <li><a href="">
+        </a>
+        </li>
+        <li>Email: <a href="mailto:contact@designssquare.com">contact@designssquare.com</a></li>
+    </ul>
+    . <p>Thank you for purchasing our product. If you have any questions, please feel free to email us! </p>
+</section>
+<section id="about">
+    <h3>About</h3>
+    <hr>
+    <p>DesignsSquare.com Maps widget contains:</p>
+    <ul>
+        <li><b>Leaflets:</b> Maps library</li>
+    </ul>
+</section>
+<section id="installation">
+    <h3>Installation</h3>
+    <hr>
+    <p>Here are steps to install Maps widget:</p>
+    <ol>
+        <li>Enable "DesignsSquare Maps Widget" for any Maps to work
+            <ol>
+                <h4>For Elastic Maps</h4>
+                <li>Enable "DesignsSquare Elastic Maps Slide" which also will enable "DesignsSquare.com: Maps: Elastic: Structure"</li>
+                <li>For importing Sample Data, enable "DesignsSquare.com: Maps: Elastic: Sample Data"</li>
+                <li>Assign Elastic Maps block to a region you like the Maps to be displayed. If sample data was imported, then there is already block "DesignsSquare.com: Maps: Elastic" to be assigned. Otherwise, create a view with tag - designssquare_Maps_elastic as described in the "How To" section below for the Elastic Maps</li>
+            </ol>
+            <ol>
+                <h4>For Revolution Maps</h4>
+                <li>Enable "DesignsSquare Rev Maps" which also will enable "DesignsSquare.com: Maps: Revolution: Structure"</li>
+                <li>For importing Sample Data, enable "DesignsSquare.com: Maps: Revolution: Sample Data"</li>
+                <li>Assign Rev Maps block to a region you like the Maps to be displayed. If sample data was imported, then there is already block "DesignsSquare.com: Maps: Rev Maps" to be assigned. Otherwise, create a view with a tag - designssquare_Maps_rev_Maps as described in "How To" for Revolution Maps</li>
+            </ol>
+        </li>
+    </ol>
+</section>
+<section id="settings">
+    <h3>Settings</h3>
+    <hr>
+    <h4>Rev Maps</h4>
+    <p>The Rev Maps can have a sidebar configurable at admin/designs-square/Maps. Here are the possible settings:</p>
+    <table border="1">
+        <thead><th>Name</th><th>Default Value</th><th>Comments</th></thead>
+        <tr><td>ds_config_Maps_rev_width</td><td>100%</td><td>sets Rev Mapss width. It can be a percentage or px</td></tr>
+        <tr><td>ds_config_Maps_rev_height</td><td>431</td><td>sets Rev Mapss height</td></tr>
+        <tr><td>ds_config_Maps_sidebar_content</td><td>node_id</td><td>Sidebar Content that can be any node</td></tr>
+        <tr><td>ds_config_Maps_sidebar_position</td><td>Right</td><td>Position of the sidebar content left or right</td></tr>
+    </table>
+</section>
+<section id="how_to">
+    <h3>How To</h3>
+    <hr>
+    <h4>Setup From Code</h4>
+    <p>To setup from code:</p>
+    [code]
+    //importing map
+    module_load_include('module', 'designssquare_com_widget_map');
+    import_map();
+    ds_init_map(map_options(
+    'ds-map',
+    'makapacs.j86ik0o4',
+    500,
+    $propertyAddressCollection['latitude'],
+    $propertyAddressCollection['longitude'],
+    '14',
+    array(
+    1 => array(
+    'lat' => $propertyAddressCollection['latitude'],
+    'lng' => $propertyAddressCollection['longitude'],
+    'minWidth' => '100',
+    'content' => '<b>'.$node->title.'</b><br><address>'.$propertyAddressCollection['street'].'<br>'.$propertyAddressCollection['city'].',<br> '.$propertyAddressCollection['state'].' '.$propertyAddressCollection['zip'].'</address>'
+    ),
+    )
+    ));
+    [/code]
+
+    <h4>Setup From UI</h4>
+    <p>To setup Elastic Maps:</p>
+
+</section>
+<section id="other">
+    <h3>Other</h3>
+    <hr>
+    <h4> Designssquare Rev Maps Layer</h4>
+    <p>To delete a layer from the Maps, clear all the fields for the layer and move it at the bottom making it the last layer and Save. This will delete the empty layer. In future releases, we will implement 'Delete' buttom</p>
+    <p>The layer content can contain html tags</p>
+
+    <h4>DesignsSquare Elastic Maps Slide</h4>
+    <p>This implements custom field type for a slide of Elastic Maps</p>
+
+    <h4>Rev Maps Docs</h4>
+    <p>please, see http://www.themepunch.com/home/plugins/wordpress-plugins/revolution-Maps-wordpress/api-tutorial/</p>
+    <p>also http://www.orbis-ingenieria.com/code/documentation/documentation.html</p>
+</section>
+<section id="artifacts">
+    <h3>Artifacts</h3>
+    <hr>
+    <p>Here is an overview of the artifacts</p>
+    <table border="1">
+        <thead><th>Item</th><th>Content Type</th><th>Context</th><th>Templates</th><th>Views</th><th>Comments</th></thead>
+        <tr><td>Revolution Maps</td><td>Revolution Slide</td><td>n/a</td><td>views-view--rev-Maps.tpl.php, views-view--rev-Maps-slides.tpl.php</td><td>any view with tag "designssquare_Maps_rev_Maps"</td><td>This implements the Revolution Maps</td></tr>
+        <tr><td>Revolution Maps Sidebar</td><td>n/a</td><td>n/a</td><td>block--rev-Maps-sidebar.tpl.php</td><td>n/a</td><td>This implements sidebar of the Revolution Maps. By placing template file with name block--rev-Maps-sidebar.tpl.php in the themes folder it will override the default template. The variables has to be set in content cache to make them available for the template</td></tr>
+        <tr><td>Elastic Maps</td><td>Elastic Maps</td><td>n/a</td><td>views-view--elastic-Maps.tpl.php, views-view--elastic-Maps-slides.tpl.php</td><td>any view with tag "designssquare_Maps_elastic"</td><td>This implements the Elastic Maps</td></tr>
+    </table>
+</section>
+<section id="drupal_depenencies">
+    <h3>Drupal Dependencies</h3>
+    <hr>
+    In the following are direct dependencies for the Maps widget:
+    <ul>
+        <li>Form validation depends on module <a href="https://drupal.org/project/fapi_validation">fapi_validation</a></li>
+        <li>Form Remove button implemented from module - <a href="https://drupal.org/project/field_remove_item">field_remove_item</a></li>
+    </ul>
+</section>
+<section id="troubleshooting">
+    <h3>Troubleshooting</h3>
+    <hr>
+
+    <h5>1. The file used in the Image field may not be referenced</h5>
+    <p> This error came up when the sample data import didn't added entry in table 'file_usage' when transfering artifacts. Make sure you have the newest version of the DesignsSquare.com Maps Widget</p>
+
+    <h5>Tip 1: Rev Maps Troubleshooting</h5>
+
+    <p>Find the variable by looking at source code for 'revapiXX' where XX is some number
+    Once you have the variable you can all any of the methods:</p>
+
+    <p>
+        To trigger slide from console:
+        [code]
+        jQuery('.tp-rightarrow').click();
+        revapi1.revshowslide(1);
+        [code]
+    </p>
+
+    <h5>3. Rev Maps doesn't show if configured as banner.</h5>
+    Ensure the width is set when selecting banner type for the Rev Maps
+
+
+</section>
+<section id="releases">
+    <h3>Release History</h3>
+    <hr>
+    <h5>0.1</h5>
+
+    <ul>
+        <li>initial release</li>
+    </ul>
+    <h5>0.2</h5>
+
+    <ul>
+        <li>adding Rev Maps</li>
+    </ul>
+    <h5>0.8</h5>
+    <ul>
+        <li>adding sample data(kick start)</li>
+    </ul>
+    <h5>0.9</h5>
+    <ul>
+        <li>adding sidebar for Rev Maps</li>
+    </ul>
+    <h5>0.10</h5>
+    <ul>
+        <li>fix Elastic Maps export/import</li>
+    </ul>
+</section>
+<section id="backlog">
+    <h3>Things For Future Release</h3>
+    <hr>
+    In the following are tasks to do for future releases
+    <ul>
+        <li>fix Elastic Maps sample data export so that there is no need manual file transfer...let Feature module to handle it</li>
+        <li>Add validation for Rev Slide to ensure only text, image, video,etc is set at the same time </li>
+        <li>Make Text field 3rows or larger</li>
+        <li>set default value so there is no input constraint for End Speed</li>
+        <li>refactor Maps names with "DS-" to be consistent with other products</li>
+    </ul>
+
+</section>
+</div>
+<!--end of documenter_content-->
+</body>
+</html>

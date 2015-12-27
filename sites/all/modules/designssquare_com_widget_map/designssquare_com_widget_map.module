@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * initiates the map
+ * @param: $options
+ *     array of different options for the map. Here is list available options
+ *              - id: the id of html tag containing map
+ *              - mapbox_id: STring the id of map drawing from mapbox
+ *              - lat: Latitude for initial geographical center of the map
+ *              - lng: Longitude for initial geographic center of the map
+ *              - zoom: the zoom level of the map
+ *              - height: the height of map
+ *              - markers: array of markers on map
+ *                  -[index]['lat']: latitude of the marker
+ *                  -[index]['lng']: longitude of the marker
+ *                  -[index]['content']: content to display if any for the marker
+ *  *                  -[index]['lng']: longitude of the marker
+ *                  -[index]['content']: content to display if any for the marker
+ */
+
+function ds_init_map($options = array())
+{
+    if(empty($options)){
+        $map_id = 'ds-map';
+        $boxmap_id = 'makapacs.j86ik0o4';
+        $height = "180px";
+        $map_lat = '51.505';
+        $map_lng = '-0.09';
+        $map_zoom = '13';
+    }else{
+        $map_id = (!isset($options['id'])) ? 'ds-map' : $options['id'];
+        $boxmap_id = (!isset($options['mapbox_id'])) ? 'makapacs.j86ik0o4' : $options['mapbox_id'];
+        $height = (!isset($options['height'])) ? '300px' : $options['height'];
+        $map_lat = (!isset($options['lat'])) ? '51.505' : $options['lat'];
+        $map_lng = (!isset($options['lng'])) ? '-0.09' : $options['lng'];
+        $map_zoom = (!isset($options['zoom'])) ? '13' : $options['zoom'];
+    }
+
+    $js_to_add = "ds_map = L.map('".$map_id."').setView([".$map_lat.", ".$map_lng."], ".$map_zoom.");"."\n";
+    $js_to_add .= "L.tileLayer('http://{s}.tiles.mapbox.com/v3/".$boxmap_id."/{z}/{x}/{y}.png', {"."\n";
+    $js_to_add .= "maxZoom: 18"."\n";
+    $js_to_add .= "}).addTo(ds_map);"."\n";
+
+    if(isset($options['markers']) && !empty($options['markers'])){
+        foreach($options['markers'] as $key => $marker){
+            $maxWidth = (!isset($marker['maxWidth'])) ? 300 : $marker['maxWidth'];
+            $minWidth = (!isset($marker['minWidth'])) ? 50 : $marker['minWidth'];
+            $js_to_add .= "ds_marker = L.marker([".$marker['lat'].", ".$marker['lng']."]).addTo(ds_map);"."\n";
+            $js_to_add .= "ds_marker.bindPopup(\"".$marker['content']."\", {maxWidth: $maxWidth, minWidth: $minWidth}).openPopup();"."\n";
+        }
+    }
+
+    $js_to_add .= "(function ($) {"."\n";
+    //set height for the map
+    $js_to_add .= "$('#".$map_id."').css('height','".$height."')"."\n";
+
+    //fix bug to display map if under Twitter Bootstrap tab
+    $js_to_add .= "$('a[data-toggle=\"tab\"]').on('shown.bs.tab', function (e) {"."\n";
+//    $js_to_add .= " if(e.target.attributes[0].value=='#map'){"."\n";
+    $js_to_add .= "var target = e.target || e.srcElement; ";
+    $js_to_add .= " if(target.getAttribute('href') == '#map'){"."\n";
+    $js_to_add .= "    ds_map.invalidateSize();"."\n";
+    $js_to_add .= "    ds_marker.closePopup()"."\n";
+    $js_to_add .= "    ds_marker.openPopup()"."\n";
+    $js_to_add .= " }"."\n";
+    $js_to_add .= "});"."\n";
+    $js_to_add .= "})(jQuery);"."\n";
+    drupal_add_js($js_to_add, array('scope' =>'footer', 'type' => 'inline'));
+}
+
+/**Generates options array to pass ds_init_map
+ * @param string $type
+ */
+function map_options($id, $mapbox_id, $height, $lat, $lng, $zoom, $markers){
+    $options = array(
+        'id' => $id,
+        'mapbox_id' => $mapbox_id,
+        'height' => $height,
+        'lat' => $lat,
+        'lng' => $lng,
+        'zoom' => $zoom,
+        'markers' => $markers
+    );
+
+    return $options;
+}
+
+/*
+ * imports the necessary js,css libraries
+ * @param: $type
+ *      the map library to load. By default it is 'leaflet' js map lib
+ */
+
+function import_map($type = 'leaflet')
+{
+    switch ($type) {
+        case 'leaflet':
+//                        drupal_add_js(drupal_get_path('module', 'designssquare_com_widget_map') . '/js/leaflet-src.js', array('scope' => 'header', 'type' => 'file', 'weight' => JS_THEME));
+            drupal_add_js(drupal_get_path('module', 'designssquare_com_widget_map') . '/js/leaflet.min.js', array('scope' => 'header', 'type' => 'file', 'weight' => JS_THEME));
+            drupal_add_css(drupal_get_path('module', 'designssquare_com_widget_map') . '/css/leaflet.css', array('type' => 'file', 'weight' => (CSS_THEME)));
+            break;
+    }
+}
+

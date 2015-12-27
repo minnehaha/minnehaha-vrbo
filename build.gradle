@@ -1,0 +1,106 @@
+
+//def user="makapacs"
+//def pass="38394815"
+//def db="minnehaha_view_drupal"
+//def view="minnehahalfots.com"
+
+//def user="f_apt_mpls"
+//def pass="38394815"
+//def db="furnished_apt_minneapolis"
+//def view="furnishedapartmentminneapolis.com"
+
+//def user="ext_stay"
+//def pass="38394815"
+//def db="extended_stay"
+//def view="extendedstayminnesota.com"
+
+def user="vrbo_mpls"
+def pass="38394815"
+def db="vrbo_minneapolis"
+def view="vrbominneapolis.com"
+
+def today = new Date().format('MMMdd_yyyy')
+
+task backupFromShell(type:Exec) {
+     doFirst{println "backing up from shell..."}
+        commandLine './scripts/custom/backup-db.sh'
+   }
+
+task backup(type:Exec) {
+    doFirst{println "backing up..."}
+    executable "sh"
+    args "-c", "mysqldump -u ${user} -p${pass} ${db}>db-backup/backup_${db}-${today}.sql"
+ }
+
+ task dropTables(dependsOn: 'backup',type:Exec){
+    doFirst{println "dropping tables..."}
+    commandLine './scripts/custom/drop-tables.sh', user, pass, db
+ }
+
+ task importDb(dependsOn: 'dropTables', type:Exec){
+    doFirst{println "importing..."}
+    executable "sh"
+    args "-c", "mysql -u ${user} -p${pass} -h localhost ${db}<db-backup/${db}_import.sql"
+ }
+
+task importDbOnly(type:Exec){
+    doFirst{println "importing..."}
+    executable "sh"
+    args "-c", "mysql -u ${user} -p${pass} -h localhost ${db}<db-backup/${db}_import.sql"
+ }
+
+    task clearNodes(type:Exec){
+       doFirst{println "clearing Nodes Directory..."}
+           executable "sh"
+           args "-c", "rm -fR sites/default/files/data_export_import/nodes"
+    }
+
+   task exportNodes(dependsOn: 'clearNodes', type:Exec){
+       doFirst{println "exporting Nodes..."}
+           executable "sh"
+           args "-c", "drush dei-ex nodes --content-types=address,article,blog,contact_us,faq,faq_page,home,interface_configurations,list,page,photo,property,rental_price,seo_reference,seo_text,testimonials"
+    }
+
+    task exportNodesOnly(type:Exec){
+           doFirst{println "exporting Nodes..."}
+               executable "sh"
+               args "-c", "drush dei-ex nodes --content-types=address,article,blog,contact_us,faq,faq_page,home,interface_configurations,list,page,photo,property,rental_price,seo_reference,seo_text,testimonials"
+        }
+
+     task backupNodes(dependsOn: 'exportNodes', type:Exec){
+           doFirst{println "backup Nodes..."}
+               executable "sh"
+               args "-c", "rm -fR sites/default/files/data_export_import_${view}/nodes; mkdir sites/default/files/data_export_import_${view}; cp -R sites/default/files/data_export_import/nodes sites/default/files/data_export_import_${view}/nodes "
+        }
+
+         task exportUrl(dependsOn: 'backupNodes', type:Exec){
+            doFirst{println "exporting Urls..."}
+                executable "sh"
+                args "-c", "mysqldump -u ${user} -p${pass} ${db} url_alias>sites/default/files/data_export_import_${view}/url_${db}_import.sql"
+         }
+
+ task prepareNodesToImport(type:Exec){
+       doFirst{println "prepare Nodes to Import..."}
+       executable "sh"
+       args "-c", "rm -R sites/default/files/data_export_import/nodes; cp -R sites/default/files/data_export_import_${view}/nodes sites/default/files/data_export_import/nodes"
+ }
+
+task importNodes(dependsOn: 'prepareNodesToImport') << {
+       def dir = new File("sites/default/files/data_export_import/nodes").list().toList()
+       for (fileName in dir ) {
+              println "ipmorting file ${fileName}..."
+                    exec {
+                        executable "sh"
+                        args "-c", "drush dei-im nodes --file=${fileName}"
+                    }
+       }
+}
+
+ task importUrl(dependsOn: 'importNodes', type:Exec){
+     doFirst{println "importing Urls..."}
+         executable "sh"
+         args "-c", "mysql -u ${user} -p${pass} -h localhost ${db}<sites/default/files/data_export_import_${view}/url_${db}_import.sql"
+  }
+
+
+

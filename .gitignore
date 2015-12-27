@@ -1,0 +1,14 @@
+#Ignoring the Rewrite File
+.htaccess
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+#sites/*/files
+sites/*/private
+
+sites/default/files/js/*
+sites/default/files/css/*
+sites/default/files/data_export_import/nodes/*
+sites/default/files/xmlsitemap/*

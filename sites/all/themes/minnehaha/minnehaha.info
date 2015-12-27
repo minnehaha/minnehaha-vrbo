@@ -1,0 +1,36 @@
+name = minnehaha
+description = minnehaha lofts theme
+version = 0.1
+core = 7.x
+base theme = bootstrap
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[property_menu] = 'Property Menu'
+;regions[header_logo]    = 'Header Logo'
+regions[leave_testimonial]          = 'Leave Testimonial'
+regions[unit_inquiry]          = 'Unit Inquiry'
+regions[diary_list_front] = "Diary Front Page"
+regions[article_menu] = "Article Menu"
+
+stylesheets[all][] = css/type.css
+stylesheets[all][] = css/style.css
+;stylesheets[all][] = css/mobile.css
+;stylesheets[all][] = css/errors.css
+;stylesheets[all][] = css/main.css
+
+; JS
+;scripts[] = js/jquery-ui-1.10.3.dialog.min.js
+scripts[] = js/google-tracking.js
+scripts[] = js/sugar-1.3.9.min.js
+;scripts[] = js/application.js
+scripts[] = js/socket-minnehaha.js
+
+
+settings[toggle_name] = 0
+settings[toggle_search] = 1

@@ -1,0 +1,7 @@
+name = DesignsSquare Maps Widget
+description = widget for displaying maps with different locations
+core = 7.x
+version = v0.0.1
+project = designssquare_com_widget_map
+package = DesignsSquare.com.widget.map
+files[] = designssquare_com_widget_map.module

